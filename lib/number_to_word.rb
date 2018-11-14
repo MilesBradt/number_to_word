@@ -31,7 +31,7 @@ class Number_To_Word
       "1" => "ten",
       "2" => "twenty",
       "3" => "thirty",
-      "4" => "fourty",
+      "4" => "forty",
       "5" => "fifty",
       "6" => "sixty",
       "7" => "seventy",
@@ -48,6 +48,10 @@ class Number_To_Word
     @fortnite.fetch(number.to_s)
   end
 
+  def reset_output()
+    @output = ""
+  end
+
   def tens(number)
     # this function takes a two-digit number
     ten_digit = number.to_s.split("")[0]
@@ -56,10 +60,17 @@ class Number_To_Word
       temp = @ten_strings.fetch(ten_digit)
       @output = temp + " " + self.single_digits(single_digit)
     else
-      @output = @output + " " + self.teens(ten_digit + single_digit)
+      if @output == ""
+        @output = self.teens(ten_digit + single_digit)
+      else
+        @output = @output + " " + self.teens(ten_digit + single_digit)
+      end
     end
     @output
   end
+
+  def hundreds(number)
+    hundreds_digit = number.to_s.split("")[0]
 
   def translate(number)
     number_split = number.to_s.split("").reverse()
