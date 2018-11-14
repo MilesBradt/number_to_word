@@ -48,6 +48,8 @@ describe("#hundreds") do
   it("uses the hundreds-place of a number to convert the number to words") do
     testing = Number_To_Word.new()
     expect(testing.hundreds(235)).to(eq("two hundred thirty five"))
+    expect(testing.hundreds(867)).to(eq("eight hundred sixty seven"))
+    expect(testing.hundreds(420)).to(eq("four hundred twenty"))
   end
 end
 
