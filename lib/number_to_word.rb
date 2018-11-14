@@ -69,7 +69,10 @@ class Number_To_Word
     # this function takes a two-digit number
     ten_digit = number.to_s.split("")[0]
     single_digit = number.to_s.split("")[1]
-    if ten_digit != "1"
+    if ten_digit + single_digit == "10"
+      @output = @output + @ten_strings.fetch("1")
+      self.remove_last_space
+    elsif ten_digit != "1"
       temp = @ten_strings.fetch(ten_digit)
       @output = @output + temp
       self.single_digits(single_digit)

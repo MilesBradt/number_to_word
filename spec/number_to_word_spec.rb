@@ -28,7 +28,9 @@ describe('#tens') do
     testing.reset_output
     expect(testing.tens(15)).to(eq("fifteen"))
     testing.reset_output
+    expect(testing.tens(10)).to(eq("ten"))
   end
+
 
   it("translates a 'non-teens' two digit number to the word version") do
     testing = Number_To_Word.new()
@@ -48,8 +50,12 @@ describe("#hundreds") do
   it("uses the hundreds-place of a number to convert the number to words") do
     testing = Number_To_Word.new()
     expect(testing.hundreds(235)).to(eq("two hundred thirty five"))
+    testing.reset_output
     expect(testing.hundreds(867)).to(eq("eight hundred sixty seven"))
+    testing.reset_output
     expect(testing.hundreds(420)).to(eq("four hundred twenty"))
+    testing.reset_output
+    expect(testing.hundreds(510)).to(eq("five hundred ten"))
   end
 end
 
