@@ -13,16 +13,28 @@ class Number_To_Word
       8 => "eight",
       9 => "nine" }
 
+    # aka teens
+    @fortnite = {
+      11 => "eleven",
+      12 => "twelve",
+      13 => "thirteen",
+      14 => "fourteen",
+      15 => "fifteen",
+      16 => "sixteen",
+      17 => "seventeen",
+      18 => "eighteen",
+      19 => "nineteen" }
+
     @ten_words = {
-      1 => "ten",
-      2 => "twenty",
-      3 => "thirty",
-      4 => "fourty",
-      5 => "fifty",
-      6 => "sixty",
-      7 => "seventy",
-      8 => "eighty",
-      9 => "ninety" }
+      10 => "ten",
+      20 => "twenty",
+      30 => "thirty",
+      40 => "fourty",
+      50 => "fifty",
+      60 => "sixty",
+      70 => "seventy",
+      80 => "eighty",
+      90 => "ninety" }
 
   end
 
@@ -30,4 +42,14 @@ class Number_To_Word
     @single_words.fetch(number)
   end
 
+  def teens(number)
+    @fortnite.fetch(number)
+  end
+
+  def tens(number)
+    @ten_words.fetch(number)
+  end
+
+
+# array[i].concat(array[i + 1])
 end
